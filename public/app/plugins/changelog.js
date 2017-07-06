@@ -94,7 +94,7 @@
 											editor.fire("change");
 										});
 									});
-								}
+								},
 							});
 
 							editor.ui.addButton("changelog", {
@@ -104,6 +104,8 @@
 								icon: "/assets/modules/" + CKEditorConfigChangelog.name + "_" + CKEditorConfigChangelog.version + "/img/changelog.png",
 								hidpi: true,
 							});
+
+							editor.addContentsCss("/assets/modules/" + CKEditorConfigChangelog.name + "_" + CKEditorConfigChangelog.version + "/css/style.css");
 						},
 					},
 				};
