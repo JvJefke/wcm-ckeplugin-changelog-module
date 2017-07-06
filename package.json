@@ -1,0 +1,40 @@
+{
+    "name": "ckeplugin-changelog",
+    "version": "0.0.1",
+    "description": "CKEditor changelog plugin for AM",
+    "main": "index.js",
+    "keywords": [
+        "test"
+    ],
+    "wcmModule": {
+        "frontend": {
+            "dirPath": "public/app/",
+            "assetsDirPath": "public/assets/",
+            "cssDirPath": "public/assets/css/",
+            "moduleConfig": {
+                "translationKey": "ckeplugin-changelog",
+                "navigationItem": false,
+                "authentication": {
+                    "requiresLogin": false
+                }
+            }
+        },
+        "backend": {
+            "dirPath": "app/",
+            "routeDirPaths": [
+                "app/"
+            ]
+        }
+    },
+    "author": "Jeroen Valcke",
+    "license": "ISC",
+    "devDependencies": {
+        "@district01/eslint-config": "~1.0.0",
+        "gulp": "~3.9.1",
+        "gulp-angular-templatecache": "~2.0.0",
+        "gulp-clean": "~0.3.2",
+        "gulp-replace": "~0.5.4",
+        "gulp-zip": "~3.2.0",
+        "run-sequence": "~1.2.2"
+    }
+}
