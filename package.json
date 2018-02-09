@@ -1,29 +1,29 @@
 {
-    "name": "ckeplugin-changelog",
-    "version": "0.0.1",
+    "name": "@wcm/ckeplugin-changelog",
+    "version": "0.2.0",
     "description": "CKEditor changelog plugin for AM",
-    "main": "index.js",
+    "main": "app",
+    "publishConfig": {
+        "@wcm:registry": "https://nexusrepo.antwerpen.be/repository/npm-private"
+    },
     "keywords": [
-        "test"
+        "Plugin",
+        "CKEditor",
+        "Pelorus",
+        "CMS",
+        "WCM"
     ],
     "wcmModule": {
-        "frontend": {
-            "dirPath": "public/app/",
-            "assetsDirPath": "public/assets/",
-            "cssDirPath": "public/assets/css/",
-            "moduleConfig": {
-                "translationKey": "ckeplugin-changelog",
-                "navigationItem": false,
-                "authentication": {
-                    "requiresLogin": false
-                }
+        "angularDirPath": "public/app/",
+        "assetsDirPath": "public/assets/",
+        "cssDirPath": "public/assets/css",
+        "moduleConfig": {
+            "angularModule": "ckeplugin-changelog",
+            "translationKey": "ckeplugin-changelog",
+            "navigationItem": false,
+            "authentication": {
+                "requiresLogin": false
             }
-        },
-        "backend": {
-            "dirPath": "app/",
-            "routeDirPaths": [
-                "app/"
-            ]
         }
     },
     "author": "Jeroen Valcke",
@@ -35,6 +35,7 @@
         "gulp-clean": "~0.3.2",
         "gulp-replace": "~0.5.4",
         "gulp-zip": "~3.2.0",
+        "lodash": "~4.17.5",
         "run-sequence": "~1.2.2"
     }
 }
