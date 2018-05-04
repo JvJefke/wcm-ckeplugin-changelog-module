@@ -1,5 +1,5 @@
-.wcm-changelog-entryform {
-	position: relative;
+.wcm-changelog-popup, .wcm-changelog-entryform {
+    position: relative;
 }
 
 .wcm-changelog-entryform__message {

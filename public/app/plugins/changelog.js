@@ -1,7 +1,7 @@
 "use-strict";
 
 (function(CKEDITOR) {
-	angular.module("ckeplugin-changelog_0.0.1")
+	angular.module("ckeplugin-changelog_0.2.0")
 		.factory("ckeditorPluginChangelog", [
 
 			"CKEditorConfigChangelog",
@@ -34,9 +34,9 @@
 							editor.widgets.add("changelog", {
 								template: [
 									"<div class=\"wcm-changelog\">",
-										"<div class=\"wcm-changelog__entries\">", // eslint-disable-line
-											"<p class=\"wcm-changelog__entry\" data-placeholder=\"true\">No entries yet</p>", // eslint-disable-line
-										"</div>", // eslint-disable-line
+									"<div class=\"wcm-changelog__entries\">", // eslint-disable-line
+									"<p class=\"wcm-changelog__entry\" data-placeholder=\"true\">No entries yet</p>", // eslint-disable-line
+									"</div>", // eslint-disable-line
 									"</div>",
 								].join(""),
 								upcast: function(el) {
@@ -69,10 +69,9 @@
 									widget.setData("entries", data.entries);
 
 									widget.on("edit", function() {
-										newData = angular.copy(widget.data);
 										DialogService.openModal({
 											templateUrl: CKEditorConfigChangelog.modulePath + "templates/changelogModal.tpl.html",
-											data: newData,
+											data: data,
 											controller: ["$scope", function($scope) {
 												$scope.statuses = ["added", "changed", "deprecated", "removed", "fixed", "security"];
 
@@ -89,8 +88,8 @@
 											}],
 											appendClassName: "ngdialog--lg",
 										}).then(function() {
-											widget.setData("entries", newData.entries);
-											updateWidget(newData.entries, widget.element.getChild(0));
+											widget.setData("entries", data.entries);
+											updateWidget(data.entries, widget.element.getChild(0));
 											editor.fire("change");
 										});
 									});
@@ -101,11 +100,11 @@
 								label: "Add a changelog",
 								command: "changelog",
 								toolbar: "insert",
-								icon: "/assets/modules/" + CKEditorConfigChangelog.name + "_" + CKEditorConfigChangelog.version + "/img/changelog.png",
+								icon: CKEditorConfigChangelog.assetsDirPath + "/img/changelog.png",
 								hidpi: true,
 							});
 
-							editor.addContentsCss("/assets/modules/" + CKEditorConfigChangelog.name + "_" + CKEditorConfigChangelog.version + "/css/style.css");
+							editor.addContentsCss(CKEditorConfigChangelog.cssDirPath + "/style.css");
 						},
 					},
 				};
