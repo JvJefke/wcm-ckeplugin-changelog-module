@@ -1,7 +1,7 @@
 "use strict";
 
 (function() {
-	angular.module("ckeplugin-changelog_0.0.1")
+	angular.module("ckeplugin-changelog_0.2.0")
 		.provider("ckeditorPluginsChangelog", [
 
 			"$provide",
